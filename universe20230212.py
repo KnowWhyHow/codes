@@ -47,14 +47,14 @@ def move(a:Mass,b:Mass,G,T):
     A = gravity(a,b,G)/b.m
     b.vx += dist_x / dist(a,b) * A * T
     b.vy += dist_y / dist(a,b) * A * T
-    b.x +=b.vx
-    b.y +=b.vy
+    b.x +=b.vx* T
+    b.y +=b.vy* T
 
     A = -gravity(a,b,G)/a.m
     a.vx += dist_x/dist(a,b) * A * T
     a.vy += dist_y/dist(a,b) * A * T
-    a.x +=a.vx
-    a.y +=a.vy
+    a.x +=a.vx* T
+    a.y +=a.vy* T
     b.update()
     a.update()
 
